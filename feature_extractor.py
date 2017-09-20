@@ -56,4 +56,8 @@ def vec2csv(dataset):
     infected.to_csv('dataset.csv',sep=',', encoding='utf-8')
         
 if __name__=='__main__':
-    pe2vec()
+    path = "dasmalwerk/binaries/e769b6ab-ef05-11e6-86ab-80e65024849a.file"
+    pe = PEFile(path)
+    sample = pe.Construct()
+    
+    print sample
