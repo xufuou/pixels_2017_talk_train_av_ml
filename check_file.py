@@ -164,6 +164,7 @@ def extract_infos(fpath):
     # Version configuration size
     try:
         version_infos = get_version_info(pe)
+        print version_infos
         res['VersionInformationSize'] = len(version_infos.keys())
     except AttributeError:
         res['VersionInformationSize'] = 0
