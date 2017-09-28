@@ -3,9 +3,11 @@ import os
 import array
 import math
 import pickle
+import pprint
 from sklearn.externals import joblib
 import sys
 import argparse
+from termcolor import colored
 
 def get_entropy(data):
     if len(data) == 0:
@@ -164,7 +166,6 @@ def extract_infos(fpath):
     # Version configuration size
     try:
         version_infos = get_version_info(pe)
-        print version_infos
         res['VersionInformationSize'] = len(version_infos.keys())
     except AttributeError:
         res['VersionInformationSize'] = 0
@@ -188,14 +189,24 @@ if __name__ == '__main__':
     )
 
     data = extract_infos(args.FILE)
-    print data
-    print features
+    print colored("\n\nExtracted features","white")
+    print "*"*40
+    pprint.pprint(data)
+    print "*"*40
+    print colored("Selected features","white")
+    pprint.pprint(features)
+    print "*"*40
+
     pe_features = map(lambda x:data[x], features)
 
     res= clf.predict([pe_features])[0]
+    if res==1:
+        c="green"
+    else:
+        c="red"
     print('The file %s is %s' % (
         os.path.basename(sys.argv[1]),
-        ['malicious', 'legitimate'][res])
+        colored(['malicious', 'legitimate'][res],c))
     )
 
 
