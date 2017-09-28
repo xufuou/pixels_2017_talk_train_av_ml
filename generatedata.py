@@ -170,7 +170,7 @@ def extract_infos(fpath):
     return res
 
 if __name__ == '__main__':
-    output = "dasmalwerk_data.csv"
+    output = "VirusShare_00296_data.csv"
     csv_delimiter = "|"
     columns = [
         "Name",
@@ -235,10 +235,11 @@ if __name__ == '__main__':
     ff = open(output, "a")
     ff.write(csv_delimiter.join(columns) + "\n")
 
-    for ffile in os.listdir('dasmalwerk/binaries'):
+    for ffile in os.listdir('virushare'):
         print(ffile)
         try:
-            res = extract_infos(os.path.join('dasmalwerk/binaries', ffile))
+            res = extract_infos(os.path.join('virushare', ffile))
+            os.path.join('virushare', ffile)
             res.append(0)
 
             ff.write(csv_delimiter.join(map(lambda x:str(x), res)) + "\n")

@@ -2,3 +2,5 @@
 *.file
 .ipynb_checkpoints/
 env/
+virushare/
+
