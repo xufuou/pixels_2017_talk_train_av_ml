@@ -1,12 +1,12 @@
 ## Talk Pixels Camp 2017 - Train your own antivirus with Machine Learning
 
-Talk
+**Talk contents**
 
 Slides - slide_deck.pdf
 
 Notebook - demo.ipynb
 
-Running the scripts
+**Running the scripts**
 
 I recommend the usage of [virtualenv](https://virtualenv.pypa.io/en/stable/userguide/) before installing the dependencies.(Optional)
 
