@@ -2,7 +2,7 @@
 
 Talk
 
-Slides - slide_dec.pdf
+Slides - slide_deck.pdf
 
 Notebook - demo.ipynb
 
